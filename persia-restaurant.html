@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persia Restaurant Ghana | Authentic Persian Cuisine in Accra</title>
+<meta name="description" content="Experience authentic Persian cuisine in Accra at Persia Restaurant Ghana. Luxury dining at Persia Luxury Apartment. Book your table today.">
+<meta name="keywords" content="Persian restaurant in Accra, best restaurants in Accra, Persian food Ghana, luxury dining Accra, kebab Accra">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-pale: #F5E9C9;
+  --crimson: #8B1A1A;
+  --crimson-deep: #5C0F0F;
+  --cream: #F7F0E3;
+  --cream-dark: #EDE0C8;
+  --ink: #1A1008;
+  --ink-mid: #3D2B1F;
+  --text-muted: #7A6550;
+  --white: #FEFCF8;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'EB Garamond', Georgia, serif;
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 4vw;
+  transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+}
+nav.scrolled {
+  background: rgba(26,16,8,0.97);
+  padding: 0.75rem 4vw;
+  box-shadow: 0 2px 30px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+.nav-logo {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+  text-decoration: none;
+}
+.nav-logo-main {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem; font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  line-height: 1;
+}
+.nav-logo-sub {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.65rem; font-weight: 400;
+  color: var(--gold-light);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.nav-links {
+  display: flex; gap: 2rem; list-style: none;
+}
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem; letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream); text-decoration: none;
+  opacity: 0.85;
+  transition: color 0.3s, opacity 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1px; background: var(--gold);
+  transform: scaleX(0); transition: transform 0.3s;
+}
+.nav-links a:hover { color: var(--gold); opacity: 1; }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-cta {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem; letter-spacing: 0.12em;
+  padding: 0.55rem 1.4rem;
+  background: var(--gold);
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--gold);
+  transition: all 0.3s;
+  font-weight: 500;
+}
+.nav-cta:hover {
+  background: transparent;
+  color: var(--gold);
+}
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 4px; background: none; border: none;
+}
+.hamburger span {
+  display: block; width: 24px; height: 1.5px;
+  background: var(--gold);
+  transition: all 0.3s;
+}
+.mobile-menu {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: rgba(26,16,8,0.98);
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 2rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem; letter-spacing: 0.2em;
+  color: var(--cream); text-decoration: none;
+  transition: color 0.3s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-close {
+  position: absolute; top: 1.5rem; right: 4vw;
+  font-size: 2rem; color: var(--gold);
+  background: none; border: none; cursor: pointer;
+}
+
+/* ── HERO ── */
+#hero {
+  position: relative;
+  height: 100vh; min-height: 600px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  background: var(--ink);
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(26,16,8,0.35) 0%, rgba(26,16,8,0.6) 60%, rgba(26,16,8,0.92) 100%),
+    url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1600&q=80') center/cover no-repeat;
+  transform: scale(1.05);
+  animation: heroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.12); }
+}
+.hero-ornament {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: min(500px, 90vw); height: min(500px, 90vw);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rotateOrn 40s linear infinite;
+}
+.hero-ornament::before {
+  content: '';
+  position: absolute; inset: 20px;
+  border: 1px solid rgba(201,168,76,0.1);
+  border-radius: 50%;
+}
+@keyframes rotateOrn { to { transform: translate(-50%,-50%) rotate(360deg); } }
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center; padding: 0 1.5rem;
+  animation: fadeUp 1.2s ease 0.3s both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-badge {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.5);
+  padding: 0.4rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.hero-sub {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--cream-dark);
+  opacity: 0.8;
+  margin-bottom: 2.8rem;
+}
+.hero-btns {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.9rem 2.4rem;
+  background: var(--gold);
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: 500;
+  border: 1px solid var(--gold);
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201,168,76,0.3);
+}
+.btn-outline {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.9rem 2.4rem;
+  background: transparent;
+  color: var(--white);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.5);
+  transition: all 0.3s;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+.hero-scroll {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--gold); opacity: 0.7;
+  animation: bounce 2s ease-in-out infinite;
+}
+.hero-scroll span {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase;
+}
+.hero-scroll::after {
+  content: '';
+  display: block; width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── SECTION BASE ── */
+section { padding: 6rem 4vw; }
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.section-title em { font-style: italic; color: var(--crimson); }
+.divider {
+  display: flex; align-items: center; gap: 1rem;
+  margin: 1.5rem 0;
+}
+.divider-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  max-width: 100px;
+}
+.divider-ornament {
+  width: 8px; height: 8px;
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+/* ── ABOUT ── */
+#about { background: var(--ink); position: relative; overflow: hidden; }
+#about::before {
+  content: '';
+  position: absolute; top: -50%; right: -20%;
+  width: 600px; height: 600px;
+  border: 1px solid rgba(201,168,76,0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.about-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  align-items: center;
+}
+.about-img-wrap {
+  position: relative;
+}
+.about-img-main {
+  width: 100%; aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+.about-img-accent {
+  position: absolute;
+  bottom: -1.5rem; right: -1.5rem;
+  width: 55%; aspect-ratio: 1;
+  object-fit: cover;
+  border: 4px solid var(--ink);
+}
+.about-frame {
+  position: absolute; top: 1rem; left: 1rem; right: -1rem; bottom: -1rem;
+  border: 1px solid rgba(201,168,76,0.3);
+  pointer-events: none;
+}
+.about-content .section-title { color: var(--cream); }
+.about-text {
+  font-size: 1.05rem; line-height: 1.85;
+  color: rgba(247,240,227,0.75);
+  margin-bottom: 1.5rem;
+}
+.about-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin-top: 2.5rem;
+  border-top: 1px solid rgba(201,168,76,0.2);
+  padding-top: 2rem;
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem; font-weight: 300;
+  color: var(--gold);
+  display: block; line-height: 1;
+}
+.stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* ── FEATURED DISHES ── */
+#dishes { background: var(--cream); }
+.dishes-inner { max-width: 1200px; margin: 0 auto; }
+.dishes-header { text-align: center; margin-bottom: 3.5rem; }
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.dish-card {
+  background: var(--white);
+  overflow: hidden;
+  transition: transform 0.4s, box-shadow 0.4s;
+  border: 1px solid rgba(201,168,76,0.15);
+}
+.dish-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(26,16,8,0.15);
+}
+.dish-img-wrap {
+  overflow: hidden; aspect-ratio: 4/3; position: relative;
+}
+.dish-img-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s;
+}
+.dish-card:hover .dish-img-wrap img { transform: scale(1.08); }
+.dish-tag {
+  position: absolute; top: 1rem; left: 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 0.3rem 0.7rem;
+}
+.dish-body { padding: 1.4rem 1.5rem 1.6rem; }
+.dish-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 500;
+  color: var(--ink); margin-bottom: 0.5rem;
+}
+.dish-desc {
+  font-size: 0.88rem; line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ── MENU ── */
+#menu { background: var(--crimson-deep); position: relative; overflow: hidden; }
+#menu::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.menu-inner { max-width: 900px; margin: 0 auto; text-align: center; position: relative; }
+.menu-inner .section-title { color: var(--cream); }
+.menu-inner .section-label { color: var(--gold-light); }
+.menu-desc {
+  font-size: 1.05rem; line-height: 1.8;
+  color: rgba(247,240,227,0.7);
+  max-width: 600px; margin: 0 auto 3rem;
+}
+.menu-embed-wrap {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+.menu-embed-wrap iframe {
+  width: 100%; height: 600px; border: none; display: block;
+}
+.menu-fallback {
+  padding: 4rem 2rem; text-align: center;
+}
+.menu-fallback p { color: rgba(247,240,227,0.6); margin-bottom: 1.5rem; }
+
+/* ── GALLERY ── */
+#gallery { background: var(--ink); padding-bottom: 4rem; }
+.gallery-inner { max-width: 1300px; margin: 0 auto; }
+.gallery-header { text-align: center; margin-bottom: 3rem; }
+.gallery-header .section-title { color: var(--cream); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 12px;
+}
+.gal-item {
+  overflow: hidden; position: relative;
+  cursor: pointer;
+}
+.gal-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.gal-item:nth-child(5) { grid-column: span 2; }
+.gal-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.6s, filter 0.4s;
+  min-height: 200px;
+}
+.gal-item:hover img { transform: scale(1.06); filter: brightness(1.1); }
+.gal-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,16,8,0.7), transparent);
+  opacity: 0; transition: opacity 0.4s;
+  display: flex; align-items: flex-end; padding: 1rem;
+}
+.gal-item:hover .gal-overlay { opacity: 1; }
+.gal-overlay span {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem; letter-spacing: 0.2em;
+  color: var(--gold); text-transform: uppercase;
+}
+
+/* ── TESTIMONIALS ── */
+#testimonials { background: var(--cream-dark); }
+.test-inner { max-width: 1100px; margin: 0 auto; }
+.test-header { text-align: center; margin-bottom: 3rem; }
+.test-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.test-card {
+  background: var(--white);
+  padding: 2rem 2rem 1.8rem;
+  border: 1px solid rgba(201,168,76,0.15);
+  border-top: 3px solid var(--gold);
+  position: relative;
+}
+.test-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 300;
+  color: var(--gold); opacity: 0.3;
+  line-height: 1; margin-bottom: 0.5rem;
+}
+.test-text {
+  font-size: 1rem; line-height: 1.8;
+  color: var(--ink-mid);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.test-author { display: flex; align-items: center; gap: 0.8rem; }
+.test-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--gold-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cinzel', serif; font-size: 0.9rem;
+  color: var(--gold); font-weight: 600;
+  flex-shrink: 0;
+}
+.test-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem; letter-spacing: 0.1em;
+  color: var(--ink); font-weight: 500;
+}
+.test-origin {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.test-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 0.2rem; }
+
+/* ── RESERVATION ── */
+#reservation { background: var(--ink); position: relative; }
+#reservation::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=60') center/cover;
+  opacity: 0.08;
+}
+.res-inner {
+  max-width: 900px; margin: 0 auto; position: relative;
+  display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start;
+}
+.res-info .section-title { color: var(--cream); }
+.res-info p {
+  font-size: 1rem; line-height: 1.8;
+  color: rgba(247,240,227,0.65);
+  margin-bottom: 2rem;
+}
+.res-contact-item {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.res-icon {
+  width: 40px; height: 40px;
+  border: 1px solid rgba(201,168,76,0.4);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.res-icon svg { width: 18px; height: 18px; fill: var(--gold); }
+.res-contact-text {
+  font-size: 0.9rem;
+  color: rgba(247,240,227,0.7);
+  line-height: 1.5;
+}
+.res-contact-text strong {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem; letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+.res-form {
+  background: rgba(247,240,227,0.04);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 2.5rem;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group {
+  display: flex; flex-direction: column; gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.form-group label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold);
+}
+.form-group input,
+.form-group select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: var(--cream);
+  padding: 0.75rem 1rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+  -webkit-appearance: none;
+}
+.form-group input::placeholder { color: rgba(247,240,227,0.3); }
+.form-group input:focus,
+.form-group select:focus { border-color: var(--gold); }
+.form-group select option { background: var(--ink-mid); }
+.btn-form {
+  width: 100%;
+  padding: 1rem;
+  background: var(--gold);
+  color: var(--ink);
+  border: none; cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+  transition: all 0.3s; font-weight: 500;
+  margin-top: 0.5rem;
+}
+.btn-form:hover {
+  background: var(--gold-light);
+  box-shadow: 0 8px 25px rgba(201,168,76,0.3);
+}
+.whatsapp-btn {
+  display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: #25D366;
+  color: white;
+  border: none; cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin-top: 0.7rem;
+}
+.whatsapp-btn:hover { background: #128C7E; }
+.whatsapp-btn svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
+
+/* ── CONTACT ── */
+#contact { background: var(--cream); }
+.contact-inner { max-width: 1100px; margin: 0 auto; }
+.contact-header { text-align: center; margin-bottom: 3rem; }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem;
+  align-items: start;
+}
+.contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
+.contact-card {
+  background: var(--white);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-left: 3px solid var(--gold);
+  padding: 1.4rem 1.5rem;
+}
+.contact-card-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.5rem;
+}
+.contact-card-text {
+  font-size: 0.95rem; line-height: 1.7;
+  color: var(--ink-mid);
+}
+.contact-card-text a {
+  color: var(--crimson);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.contact-card-text a:hover { color: var(--gold); }
+.hours-grid { display: grid; gap: 0.3rem; }
+.hours-row {
+  display: flex; justify-content: space-between;
+  font-size: 0.9rem; padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  color: var(--ink-mid);
+}
+.hours-row span:first-child { font-weight: 500; }
+.map-wrap {
+  border: 1px solid rgba(201,168,76,0.2);
+  overflow: hidden;
+}
+.map-wrap iframe {
+  width: 100%; height: 400px; border: none; display: block;
+  filter: sepia(20%) saturate(90%) hue-rotate(10deg);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: #0E0A05;
+  padding: 4rem 4vw 2rem;
+  border-top: 1px solid rgba(201,168,76,0.2);
+}
+.footer-top {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  margin-bottom: 2rem;
+}
+.footer-brand .nav-logo-main { font-size: 1.3rem; }
+.footer-desc {
+  font-size: 0.88rem; line-height: 1.8;
+  color: rgba(247,240,227,0.45);
+  margin: 1rem 0 1.5rem;
+}
+.social-links { display: flex; gap: 0.8rem; }
+.social-link {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(201,168,76,0.3);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); text-decoration: none;
+  transition: all 0.3s; font-size: 0.85rem;
+}
+.social-link:hover {
+  background: var(--gold); color: var(--ink);
+  border-color: var(--gold);
+}
+.footer-col h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem; font-weight: 500;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col ul a {
+  font-size: 0.88rem;
+  color: rgba(247,240,227,0.5);
+  text-decoration: none; transition: color 0.3s;
+}
+.footer-col ul a:hover { color: var(--gold); }
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(247,240,227,0.3);
+}
+.footer-copy a { color: var(--gold); text-decoration: none; }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--gold);
+  padding: 2.5rem 4vw;
+  text-align: center;
+}
+.cta-banner-inner { max-width: 700px; margin: 0 auto; }
+.cta-banner h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.cta-banner p {
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+.btn-dark {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.9rem 2.4rem;
+  background: var(--ink);
+  color: var(--gold);
+  text-decoration: none;
+  transition: all 0.3s; font-weight: 500;
+  border: 1px solid var(--ink);
+}
+.btn-dark:hover {
+  background: transparent;
+  color: var(--ink);
+}
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .about-img-main { aspect-ratio: 16/9; }
+  .about-img-accent { width: 45%; }
+  .res-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gal-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+  .gal-item:nth-child(5) { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+  section { padding: 4rem 5vw; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .about-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gal-item:nth-child(1) { grid-column: span 2; }
+}
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gal-item:nth-child(1), .gal-item:nth-child(5) { grid-column: span 1; }
+  .about-stats { grid-template-columns: repeat(3, 1fr); }
+  .stat-num { font-size: 1.8rem; }
+  .menu-embed-wrap iframe { height: 400px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-main">PERSIA</span>
+    <span class="nav-logo-sub">Restaurant Ghana</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#dishes">Dishes</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#reservation" class="nav-cta">Reserve a Table</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">&#x2715;</button>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#dishes" onclick="toggleMenu()">Dishes</a>
+  <a href="#menu" onclick="toggleMenu()">Menu</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#testimonials" onclick="toggleMenu()">Reviews</a>
+  <a href="#reservation" onclick="toggleMenu()">Reserve</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ornament"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Est. in Accra · Persia Luxury Apartment</div>
+    <h1 class="hero-title">Experience <em>Authentic</em><br>Persian Cuisine in Accra</h1>
+    <p class="hero-sub">Luxury Dining at Persia Restaurant</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">View Menu</a>
+      <a href="#reservation" class="btn-outline">Reserve a Table</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap reveal">
+      <img class="about-img-main" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80" alt="Persian restaurant interior" loading="lazy">
+      <img class="about-img-accent" src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&q=80" alt="Persian food" loading="lazy">
+      <div class="about-frame"></div>
+    </div>
+    <div class="about-content reveal">
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title">A Journey Through <em>Persian Flavour</em></h2>
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-ornament"></div>
+        <div class="divider-line"></div>
+      </div>
+      <p class="about-text">
+        Nestled within the prestigious Persia Luxury Apartment on 53 Asafoanye O. Broni Circle, Persia Restaurant Ghana brings the timeless traditions of Persian gastronomy to the heart of Accra.
+      </p>
+      <p class="about-text">
+        Every dish is a story — crafted from ancient recipes, premium ingredients, and the warm hospitality that defines Persian culture. From slow-roasted kebabs kissed by open flame to fragrant saffron rice and delicate stews, our kitchen is a celebration of one of the world's oldest culinary heritages.
+      </p>
+      <p class="about-text">
+        We invite you to a dining experience that transcends the ordinary — where luxury, culture, and cuisine converge in perfect harmony.
+      </p>
+      <div class="about-stats">
+        <div>
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Menu items</span>
+        </div>
+        <div>
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Authentic</span>
+        </div>
+        <div>
+          <span class="stat-num">5★</span>
+          <span class="stat-label">Dining</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED DISHES -->
+<section id="dishes">
+  <div class="dishes-inner">
+    <div class="dishes-header reveal">
+      <span class="section-label">Culinary Excellence</span>
+      <h2 class="section-title">Featured <em>Dishes</em></h2>
+      <div class="divider" style="justify-content:center">
+        <div class="divider-line"></div>
+        <div class="divider-ornament"></div>
+        <div class="divider-line"></div>
+      </div>
+    </div>
+    <div class="dishes-grid">
+      <div class="dish-card reveal">
+        <div class="dish-img-wrap">
+          <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&q=80" alt="Kebab Koobideh" loading="lazy">
+          <span class="dish-tag">Signature</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-name">Kebab Koobideh</div>
+          <p class="dish-desc">Juicy ground lamb and beef kebab seasoned with onion, turmeric, and sumac, grilled over charcoal flame and served with saffron basmati rice.</p>
+        </div>
+      </div>
+      <div class="dish-card reveal">
+        <div class="dish-img-wrap">
+          <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=600&q=80" alt="Ghormeh Sabzi" loading="lazy">
+          <span class="dish-tag">Classic</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-name">Ghormeh Sabzi</div>
+          <p class="dish-desc">Iran's beloved herb stew — a rich blend of fenugreek, parsley, leek, dried limes, and tender lamb, slow-cooked to perfection.</p>
+        </div>
+      </div>
+      <div class="dish-card reveal">
+        <div class="dish-img-wrap">
+          <img src="https://images.unsplash.com/photo-1539136788836-5699e78bdbf4?w=600&q=80" alt="Chelo Kebab" loading="lazy">
+          <span class="dish-tag">Popular</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-name">Chelo Kebab Soltani</div>
+          <p class="dish-desc">The royal kebab — a regal combination of koobideh and barg (filet kebab), paired with golden saffron rice and grilled tomato.</p>
+        </div>
+      </div>
+      <div class="dish-card reveal">
+        <div class="dish-img-wrap">
+          <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80" alt="Persian Tea" loading="lazy">
+          <span class="dish-tag">Beverage</span>
+        </div>
+        <div class="dish-body">
+          <div class="dish-name">Persian Tea Ceremony</div>
+          <p class="dish-desc">Aromatic black tea brewed with cardamom and rose water, served in traditional glass cups with rock sugar and dried fruits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER 1 -->
+<div class="cta-banner">
+  <div class="cta-banner-inner">
+    <h3>Taste the Art of Persian Cooking</h3>
+    <p>Over 50 authentic dishes crafted with the finest ingredients — from the heart of Persia to your table in Accra.</p>
+    <a href="#menu" class="btn-dark">Explore Full Menu</a>
+  </div>
+</div>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="menu-inner reveal">
+    <span class="section-label">Our Menu</span>
+    <h2 class="section-title" style="color:var(--cream)">A World of <em style="color:var(--gold-light)">Flavour</em></h2>
+    <div class="divider" style="justify-content:center">
+      <div class="divider-line" style="background:linear-gradient(to right,transparent,rgba(201,168,76,0.5),transparent)"></div>
+      <div class="divider-ornament"></div>
+      <div class="divider-line" style="background:linear-gradient(to right,transparent,rgba(201,168,76,0.5),transparent)"></div>
+    </div>
+    <p class="menu-desc">Explore our carefully curated selection of authentic Persian dishes, beverages, and desserts — each a chapter in a centuries-old culinary story.</p>
+    <div class="menu-embed-wrap">
+      <iframe
+        src="https://res.cloudinary.com/dphdqbms3/image/upload/v1717159959/Persia%20Restaurant/PERSIAN_FOOD_DRINK_MENU_bjs4x7.pdf"
+        title="Persia Restaurant Menu"
+        loading="lazy">
+        <div class="menu-fallback">
+          <p>Your browser cannot display the menu directly.</p>
+          <a href="https://res.cloudinary.com/dphdqbms3/image/upload/v1717159959/Persia%20Restaurant/PERSIAN_FOOD_DRINK_MENU_bjs4x7.pdf" target="_blank" rel="noopener" class="btn-primary">Download Menu PDF</a>
+        </div>
+      </iframe>
+    </div>
+    <a href="https://res.cloudinary.com/dphdqbms3/image/upload/v1717159959/Persia%20Restaurant/PERSIAN_FOOD_DRINK_MENU_bjs4x7.pdf" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-top:1rem">Download Menu PDF</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-header reveal">
+      <span class="section-label">Visual Journey</span>
+      <h2 class="section-title" style="color:var(--cream)">The Persia <em>Experience</em></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gal-item reveal">
+        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=900&q=80" alt="Restaurant ambiance">
+        <div class="gal-overlay"><span>Our Interior</span></div>
+      </div>
+      <div class="gal-item reveal">
+        <img src="https://images.unsplash.com/photo-1561626423-a51b45aef0a1?w=600&q=80" alt="Persian kebab">
+        <div class="gal-overlay"><span>Kebab Platter</span></div>
+      </div>
+      <div class="gal-item reveal">
+        <img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=600&q=80" alt="Saffron rice">
+        <div class="gal-overlay"><span>Saffron Rice</span></div>
+      </div>
+      <div class="gal-item reveal">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Fine dining table">
+        <div class="gal-overlay"><span>Fine Dining</span></div>
+      </div>
+      <div class="gal-item reveal">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=80" alt="Persian spread">
+        <div class="gal-overlay"><span>Persian Feast</span></div>
+      </div>
+      <div class="gal-item reveal">
+        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80" alt="Grilled meats">
+        <div class="gal-overlay"><span>Grilled Delights</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="test-inner">
+    <div class="test-header reveal">
+      <span class="section-label">Guest Reviews</span>
+      <h2 class="section-title">Words from Our <em>Guests</em></h2>
+      <div class="divider" style="justify-content:center">
+        <div class="divider-line"></div>
+        <div class="divider-ornament"></div>
+        <div class="divider-line"></div>
+      </div>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"</div>
+        <p class="test-text">The Koobideh kebab was absolutely divine. The flavors transported me straight to Tehran. Best Persian food I've found in Accra by far — and the ambiance is truly luxurious.</p>
+        <div class="test-author">
+          <div class="test-avatar">AM</div>
+          <div>
+            <div class="test-name">Abena Mensah</div>
+            <div class="test-origin">Accra, Ghana</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"</div>
+        <p class="test-text">As an Iranian living in Accra, finding authentic Persian food here felt like a miracle. Ghormeh Sabzi tasted exactly like my mother's recipe. I come back every week.</p>
+        <div class="test-author">
+          <div class="test-avatar">KR</div>
+          <div>
+            <div class="test-name">Kamran Rostami</div>
+            <div class="test-origin">Iranian expat, Accra</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <div class="test-quote">"</div>
+        <p class="test-text">Brought my clients here for a business dinner and they were blown away. The service, the food, the atmosphere — everything screamed world-class. Persia is in a league of its own in Accra.</p>
+        <div class="test-author">
+          <div class="test-avatar">JO</div>
+          <div>
+            <div class="test-name">James Osei</div>
+            <div class="test-origin">Kumasi, Ghana</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section id="reservation">
+  <div class="res-inner">
+    <div class="res-info reveal">
+      <span class="section-label">Book Your Experience</span>
+      <h2 class="section-title" style="color:var(--cream)">Reserve Your <em style="color:var(--gold)">Table</em></h2>
+      <div class="divider">
+        <div class="divider-line" style="background:linear-gradient(to right,transparent,rgba(201,168,76,0.4),transparent)"></div>
+        <div class="divider-ornament"></div>
+        <div class="divider-line" style="background:linear-gradient(to right,transparent,rgba(201,168,76,0.4),transparent)"></div>
+      </div>
+      <p>Secure your table for an unforgettable Persian dining experience. We recommend booking in advance for weekend and special occasion dining.</p>
+      <div class="res-contact-item">
+        <div class="res-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.45 15.45 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.4 11.4 0 003.57.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.24 1.01l-2.21 2.21z"/></svg>
+        </div>
+        <div class="res-contact-text">
+          <strong>Phone / WhatsApp</strong>
+          <a href="tel:0544322611" style="color:var(--gold-light)">0544 322 611</a>
+        </div>
+      </div>
+      <div class="res-contact-item">
+        <div class="res-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div class="res-contact-text">
+          <strong>Location</strong>
+          53 Asafoanye O. Broni Circle, Persia Luxury Apartment, Accra
+        </div>
+      </div>
+    </div>
+    <div class="res-form reveal">
+      <form onsubmit="handleReservation(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="r-name">Full Name</label>
+            <input id="r-name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="r-phone">Phone Number</label>
+            <input id="r-phone" type="tel" placeholder="0XX XXX XXXX" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="r-date">Date</label>
+            <input id="r-date" type="date" required>
+          </div>
+          <div class="form-group">
+            <label for="r-time">Time</label>
+            <input id="r-time" type="time" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="r-guests">Number of Guests</label>
+          <select id="r-guests" required>
+            <option value="">Select guests</option>
+            <option>1 Guest</option>
+            <option>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4 Guests</option>
+            <option>5 Guests</option>
+            <option>6 Guests</option>
+            <option>7–10 Guests</option>
+            <option>10+ Guests (Private Event)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-form">Confirm Reservation</button>
+      </form>
+      <a href="https://wa.me/233544322611?text=Hello%20Persia%20Restaurant%2C%20I'd%20like%20to%20make%20a%20reservation." target="_blank" rel="noopener" class="whatsapp-btn">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Reserve via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-header reveal">
+      <span class="section-label">Find Us</span>
+      <h2 class="section-title">Visit <em>Persia</em></h2>
+      <div class="divider" style="justify-content:center">
+        <div class="divider-line"></div>
+        <div class="divider-ornament"></div>
+        <div class="divider-line"></div>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-details reveal">
+        <div class="contact-card">
+          <div class="contact-card-label">Address</div>
+          <div class="contact-card-text">
+            53 Asafoanye O. Broni Circle<br>
+            Persia Luxury Apartment<br>
+            Accra, Ghana<br>
+            <small style="color:var(--text-muted)">Plus Code: HR76+P6 Accra</small>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-text">
+            <a href="tel:0544322611">0544 322 611</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-label">Opening Hours</div>
+          <div class="contact-card-text">
+            <div class="hours-grid">
+              <div class="hours-row"><span>Monday – Thursday</span><span>12:00 – 22:00</span></div>
+              <div class="hours-row"><span>Friday – Saturday</span><span>12:00 – 23:00</span></div>
+              <div class="hours-row"><span>Sunday</span><span>13:00 – 21:00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7!2d-0.186!3d5.603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zHR76+P6+Accra!5e0!3m2!1sen!2sgh!4v1000000000000!5m2!1sen!2sgh"
+          allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Persia Restaurant Ghana map location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER 2 -->
+<div class="cta-banner">
+  <div class="cta-banner-inner">
+    <h3>Ready for an Unforgettable Evening?</h3>
+    <p>Join us at Persia Restaurant Ghana and let us take you on a culinary journey through the ancient flavours of Persia.</p>
+    <a href="#reservation" class="btn-dark">Book Your Table Now</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo-main" style="display:block;margin-bottom:4px">PERSIA</div>
+      <div class="nav-logo-sub" style="display:block">Restaurant Ghana</div>
+      <p class="footer-desc">Authentic Persian cuisine in the heart of Accra — where ancient culinary tradition meets modern luxury dining.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Facebook">f</a>
+        <a href="#" class="social-link" aria-label="Instagram">in</a>
+        <a href="https://wa.me/233544322611" class="social-link" aria-label="WhatsApp">w</a>
+        <a href="#" class="social-link" aria-label="TripAdvisor">t</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#dishes">Featured Dishes</a></li>
+        <li><a href="#menu">Our Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Dining</h4>
+      <ul>
+        <li><a href="#reservation">Reservations</a></li>
+        <li><a href="#menu">Download Menu</a></li>
+        <li><a href="https://wa.me/233544322611">Order via WhatsApp</a></li>
+        <li><a href="#contact">Private Events</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:0544322611">0544 322 611</a></li>
+        <li><a href="#contact">53 Asafoanye O. Broni Circle</a></li>
+        <li><a href="#contact">Persia Luxury Apartment</a></li>
+        <li><a href="#contact">Accra, Ghana</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2024 Persia Restaurant Ghana. All rights reserved. | <a href="#hero">Persian Restaurant in Accra</a></p>
+    <p class="footer-copy">Designed with care for an authentic experience</p>
+  </div>
+</footer>
+
+<script>
+// NAV scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Reservation form
+function handleReservation(e) {
+  e.preventDefault();
+  const name = document.getElementById('r-name').value;
+  const phone = document.getElementById('r-phone').value;
+  const date = document.getElementById('r-date').value;
+  const time = document.getElementById('r-time').value;
+  const guests = document.getElementById('r-guests').value;
+  const msg = `Hello Persia Restaurant! I'd like to make a reservation.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ADate: ${encodeURIComponent(date)}%0ATime: ${encodeURIComponent(time)}%0AGuests: ${encodeURIComponent(guests)}`;
+  window.open(`https://wa.me/233544322611?text=${msg}`, '_blank');
+}
+
+// Set min date for reservation
+const dateInput = document.getElementById('r-date');
+if (dateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.min = today;
+}
+</script>
+</body>
+</html>
